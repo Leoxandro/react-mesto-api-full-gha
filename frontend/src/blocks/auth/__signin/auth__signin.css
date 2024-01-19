@@ -1,0 +1,13 @@
+.auth__signin {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 358px;
+    margin: 0 auto;
+  }
+
+@media screen and (max-width: 620px) {
+  .auth__signin {
+    width: 216px;
+  }
+}

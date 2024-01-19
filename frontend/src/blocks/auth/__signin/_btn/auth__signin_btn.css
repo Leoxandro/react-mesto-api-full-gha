@@ -1,0 +1,17 @@
+.auth__signin_btn {
+    background-color: rgba(0, 0, 0, 0);
+    color: #fff;
+    cursor: pointer;
+    margin: 15px 0 80px 5px;
+    border: none;
+  }
+
+@media (min-width: 620px) {
+  .auth__signin_btn {
+    margin: 15px auto 80px 5px;
+  }
+}
+
+.auth__signin_btn:hover {
+  opacity: .6;
+}

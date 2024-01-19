@@ -1,0 +1,18 @@
+.popup__item {
+  overflow: hidden;
+  width: 100%;
+  margin: 0;
+  padding-bottom: 9px;
+  border: none;
+  border-bottom: 1px solid rgba(0, 0, 0, 0.2);
+  outline: none;
+  color: #000;
+  font-weight: 400;
+  line-height: 17px;
+  font-size: 14px;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+}
+.popup__item:focus {
+  outline: 0;
+}

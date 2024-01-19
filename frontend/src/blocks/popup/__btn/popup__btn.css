@@ -1,0 +1,12 @@
+.popup__btn {
+  display: block;
+  background: none;
+  box-shadow: none;
+  border: none;
+  outline: none;
+  padding: 0;
+  margin: 0;
+}
+.popup__btn:hover {
+  cursor: pointer;
+}

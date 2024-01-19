@@ -1,0 +1,10 @@
+.popup__btn_action_close-img {
+  margin: 10px 10px;
+  top: 0;
+  right: 0;
+  width: 32px;
+  height: 32px;
+  position: unset;
+  align-self: flex-end;
+  transform: translate(52px, 0);
+}

@@ -1,0 +1,15 @@
+.auth__signin_text {
+    margin: 15px 5px 80px 0;
+    font-size: 14px;
+    line-height: 17px;
+    text-align: center;
+    color: #ffffff;
+    width: fit-content;
+    white-space: nowrap;
+  }
+
+@media screen and (min-width: 620px) {
+  .auth__signin_text {
+    margin: 15px auto 80px;
+  }
+}

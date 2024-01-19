@@ -1,0 +1,16 @@
+.profile__description {
+  overflow: visible;
+  width: 336px;
+  flex: 1 1 auto;
+  padding: 0;
+  padding-right: 30px;
+}
+
+@media screen and (max-width: 1280px) {
+  .profile__description {
+    align-self: center;
+    padding: 0;
+    margin: 22.25, auto;
+    width: 282px;
+  }
+}

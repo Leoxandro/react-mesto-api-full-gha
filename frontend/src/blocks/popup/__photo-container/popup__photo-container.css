@@ -1,0 +1,14 @@
+.popup__photo-container {
+  margin: 0 auto;
+  padding: 0;
+  width: fit-content;
+  height: fit-content;
+  background-color: unset;
+  border-radius: 0;
+  outline: none;
+  box-shadow: none;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: flex-start;
+}

@@ -1,0 +1,6 @@
+.element__like-area {
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  height: 44px;
+}
