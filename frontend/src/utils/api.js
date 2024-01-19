@@ -1,7 +1,7 @@
 const options = {
-  link: "https://mesto.nomoreparties.co/v1/cohort-71/",
+  link: "https://api.leoxandro.students.nomoredomainsmonster.ru",
   headers: {
-    authorization: "24f5849a-d334-488e-a5a0-440426637187",
+    authorization: `Bearer ${localStorage.getItem('jwt')}`, 
     "Content-Type": "application/json",
   },
 };

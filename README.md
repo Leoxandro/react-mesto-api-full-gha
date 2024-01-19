@@ -9,8 +9,8 @@
 
 ## Ссылки на проект
 
-IP-адрес leoxandro.students.nomoredomainsmonster.ru
+IP-адрес 130.193.36.189
 
-Frontend https://github.com/Leoxandro/react-mesto-api-full-gha/tree/main/frontend
+Frontend https://leoxandro.students.nomoredomainsmonster.ru
 
-Backend https://github.com/Leoxandro/react-mesto-api-full-gha/tree/main/backend
+Backend https://api.leoxandro.students.nomoredomainsmonster.ru
