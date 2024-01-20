@@ -3,7 +3,7 @@ require('dotenv').config();
 const express = require('express');
 const mongoose = require('mongoose');
 const { errors } = require('celebrate');
-const cors = require('cors');
+const cors = require('./middleware/cors');
 const usersRoutes = require('./routes/users');
 const cardRoutes = require('./routes/cards');
 const { createUser, login } = require('./controllers/users');
@@ -17,12 +17,9 @@ mongoose.connect('mongodb://127.0.0.1:27017/mestodb');
 
 const app = express();
 
-app.use(express.json());
+app.use(cors);
 
-app.use(cors({
-  origin: ['https://api.akarpov.students.nomoredomainsmonster.ru', 'http://api.akarpov.students.nomoredomainsmonster.ru', 'http://akarpov.students.nomoredomainsmonster.ru', 'https://akarpov.students.nomoredomainsmonster.ru', 'http://localhost:3000', 'http://127.0.0.1:3000'],
-  credentials: true,
-}));
+app.use(express.json());
 
 app.use(requestLogger);
 
