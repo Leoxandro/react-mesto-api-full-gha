@@ -1,5 +1,5 @@
 const options = {
-  link: "https://api.leoxandro.students.nomoredomainsmonster.ru",
+  link: "api.leoxandro.students.nomoredomainsmonster.ru",
   headers: {
     authorization: `Bearer ${localStorage.getItem('jwt')}`, 
     "Content-Type": "application/json",
