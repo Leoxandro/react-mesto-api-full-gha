@@ -14,7 +14,7 @@ const { requestLogger, errorLogger } = require('./middleware/logger');
 const { NotFoundError } = require('./utils/errors');
 
 mongoose
-  .connect(process.env.MONGO_URI)
+  .connect('mongodb://localhost:27017/mestodb')
   .then(() => console.log('Connected to MongoDB'))
   .catch((error) => console.log(`Error during MongoDB connection: ${error}`));
 
