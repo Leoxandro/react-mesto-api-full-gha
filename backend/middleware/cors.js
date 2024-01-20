@@ -1,11 +1,14 @@
 const allowedCors = [
   'http://localhost:3000',
+  'http://localhost:3001',
   'api.akarpov.students.nomoredomainsmonster.ru',
   'akarpov.students.nomoredomainsmonster.ru',
   'https://akarpov.students.nomoredomainsmonster.ru',
   'http://akarpov.students.nomoredomainsmonster.ru',
   'http://api.akarpov.students.nomoredomainsmonster.ru',
   'https://api.akarpov.students.nomoredomainsmonster.ru',
+  'localhost:27017/mestodb',
+  'mongodb://localhost:27017/mestodb',
   '*',
 ];
 
