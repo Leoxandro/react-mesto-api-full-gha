@@ -1,4 +1,4 @@
-export const BASE_URL = 'https://api.karpov.students.nomoredomainsmonster.ru';
+import { BASE_URL } from "./config";
 
 const handleResponse = (res) =>
   res.ok ? res.json() : Promise.reject(`Ошибка ${res.status}`);

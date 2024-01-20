@@ -1,19 +1,12 @@
-const options = {
-  link: "https://api.karpov.students.nomoredomainsmonster.ru/",
-  headers: {
-    authorization: `Bearer ${localStorage.getItem('jwt')}`, 
-    "Content-Type": "application/json",
-  },
-};
+import { BASE_URL } from '..utils/config';
 
 class Api {
-  constructor({ link, headers }) {
+  constructor({ link }) {
     this._link = link;
-    this._headers = headers;
   }
 
   getUserData() {
-    return fetch(`${this._link}users/me`, {
+    return fetch(`${this._link}/users/me`, {
       headers: this._headers,
     }).then((res) => {
       return this._processingServerResponse(res);
@@ -29,7 +22,7 @@ class Api {
   }
 
   getInitialCards() {
-    return fetch(`${this._link}cards`, {
+    return fetch(`${this._link}/cards`, {
       headers: this._headers,
     }).then((res) => {
       return this._processingServerResponse(res);
@@ -37,7 +30,7 @@ class Api {
   }
 
   addNewCard({ name, link }) {
-    return fetch(`${this._link}cards`, {
+    return fetch(`${this._link}/cards`, {
       headers: this._headers,
       method: "POST",
       body: JSON.stringify({ name, link }),
@@ -47,7 +40,7 @@ class Api {
   }
 
   deleteCard(cardId) {
-    return fetch(`${this._link}cards/${cardId}`, {
+    return fetch(`${this._link}/cards/${cardId}`, {
       headers: this._headers,
       method: "DELETE",
     }).then((res) => {
@@ -56,7 +49,7 @@ class Api {
   }
 
   sendUserData(obj) {
-    return fetch(`${this._link}users/me`, {
+    return fetch(`${this._link}/users/me`, {
       headers: this._headers,
       method: "PATCH",
       body: JSON.stringify({
@@ -69,7 +62,7 @@ class Api {
   }
 
   sendAvatarData(avatarLink) {
-    return fetch(`${this._link}users/me/avatar`, {
+    return fetch(`${this._link}/users/me/avatar`, {
       headers: this._headers,
       method: "PATCH",
       body: JSON.stringify({
@@ -81,7 +74,7 @@ class Api {
   }
 
   changeLikeCardStatus(cardId, method) {
-    return fetch(`${this._link}cards/${cardId}/likes`, {
+    return fetch(`${this._link}/cards/${cardId}/likes`, {
       method: method,
       headers: this._headers,
     }).then((res) => {
@@ -90,7 +83,7 @@ class Api {
 }
 
   // putCardLike(cardId) {
-  //   return fetch(`${this._link}cards/${cardId}/likes`, {
+  //   return fetch(`${this._link}/cards/${cardId}/likes`, {
   //     headers: this._headers,
   //     method: "PUT",
   //   }).then((res) => {
@@ -99,7 +92,7 @@ class Api {
   // }
 
   // deleteCardLike(cardId) {
-  //   return fetch(`${this._link}cards/${cardId}/likes`, {
+  //   return fetch(`${this._link}/cards/${cardId}/likes`, {
   //     headers: this._headers,
   //     method: "DELETE",
   //   }).then((res) => {
@@ -108,6 +101,8 @@ class Api {
   // }
 }
 
-const api = new Api(options);
+const api = new Api({ 
+  url: BASE_URL,
+});
 
 export default api;
