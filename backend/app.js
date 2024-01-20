@@ -46,7 +46,7 @@ app.use('/cards', cardRoutes);
 
 app.use(errorLogger);
 
-app.use('*', (res, req, next) => {
+app.use('*', (req, res, next) => {
   next(new NotFoundError('Requested resource was not found'));
 });
 
