@@ -3,7 +3,7 @@ require('dotenv').config();
 const express = require('express');
 const mongoose = require('mongoose');
 const { errors } = require('celebrate');
-const cors = require('./middleware/cors');
+// const cors = require('./middleware/cors');
 const usersRoutes = require('./routes/users');
 const cardRoutes = require('./routes/cards');
 const { createUser, login } = require('./controllers/users');
@@ -17,7 +17,7 @@ mongoose.connect('mongodb://127.0.0.1:27017/mestodb');
 
 const app = express();
 
-app.use(cors);
+// app.use(cors);
 
 app.use(express.json());
 
