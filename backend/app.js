@@ -22,6 +22,13 @@ const app = express();
 
 app.use(express.json());
 
+app.use((req, res, next) => {
+  res.on('finish', () => {
+    console.log('Response headers:', res.getHeaders());
+  });
+  next();
+});
+
 app.use(requestLogger);
 
 const corsOptions = {
