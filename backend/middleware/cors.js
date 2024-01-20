@@ -10,7 +10,7 @@ const allowedCors = [
   'http://localhost:3001',
 ];
 
-// eslint-disable-next-line consistent-return
+// eslint-disable-next-line
 module.exports = (req, res, next) => {
   const { method } = req;
   const requestHeaders = req.headers['access-control-request-headers'];
