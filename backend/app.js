@@ -3,7 +3,7 @@ require('dotenv').config();
 const express = require('express');
 const mongoose = require('mongoose');
 const { errors } = require('celebrate');
-const cors = require('./middleware/cors');
+const cors = require('cors');
 const usersRoutes = require('./routes/users');
 const cardRoutes = require('./routes/cards');
 const { createUser, login } = require('./controllers/users');
@@ -19,7 +19,10 @@ const app = express();
 
 app.use(express.json());
 
-app.use(cors);
+app.use(cors({
+  origin: ['https://api.akarpov.students.nomoredomainsmonster.ru', 'http://api.akarpov.students.nomoredomainsmonster.ru', 'http://localhost:3000', 'http://127.0.0.1:3000'],
+  credentials: true,
+}));
 
 app.use(requestLogger);
 
