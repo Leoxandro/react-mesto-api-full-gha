@@ -12,7 +12,15 @@ class Api {
     this._headers = headers;
   }
 
+  _updateHeaders() {
+    this._headers = {
+      authorization: `Bearer ${localStorage.getItem('jwt')}`,
+      "Content-Type": "application/json",
+    };
+  }
+
   getUserData() {
+    this._updateHeaders();
     return fetch(`${this._link}users/me`, {
       headers: this._headers,
     }).then((res) => {
