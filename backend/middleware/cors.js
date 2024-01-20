@@ -4,6 +4,8 @@ const allowedCors = [
   'akarpov.students.nomoredomainsmonster.ru',
   'https://akarpov.students.nomoredomainsmonster.ru',
   'http://akarpov.students.nomoredomainsmonster.ru',
+  'http://api.akarpov.students.nomoredomainsmonster.ru',
+  'https://api.akarpov.students.nomoredomainsmonster.ru',
   '*',
 ];
 
