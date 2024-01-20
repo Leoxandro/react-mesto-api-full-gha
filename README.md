@@ -9,8 +9,8 @@
 
 ## Ссылки на проект
 
-IP-адрес 51.250.83.110
+IP-адрес 130.193.41.208
 
-Frontend akarpov.students.nomoredomainsmonster.ru
+Frontend karpov.students.nomoredomainsmonster.ru
 
-Backend api.akarpov.students.nomoredomainsmonster.ru
+Backend api.karpov.students.nomoredomainsmonster.ru
