@@ -1,4 +1,4 @@
-export const BASE_URL = 'https://api.akarpov.students.nomoredomainsmonster.ru';
+export const BASE_URL = 'http://api.akarpov.students.nomoredomainsmonster.ru';
 
 const handleResponse = (res) =>
   res.ok ? res.json() : Promise.reject(`Ошибка ${res.status}`);
