@@ -11,6 +11,6 @@
 
 IP-адрес 51.250.94.13
 
-Frontend https://leoxandro.students.nomoredomainsmonster.ru
+Frontend leoxandro.students.nomoredomainsmonster.ru
 
-Backend https://api.leoxandro.students.nomoredomainsmonster.ru
+Backend api.leoxandro.students.nomoredomainsmonster.ru
