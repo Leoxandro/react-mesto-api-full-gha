@@ -94,7 +94,7 @@ function Main(props) {
         </section>
 
         <section className="elements">
-          {Array.isArray(cards) && cards.map((card) => (
+          {cards.map((card) => (
             <Card
               isOwn={card.owner}
               key={card._id}

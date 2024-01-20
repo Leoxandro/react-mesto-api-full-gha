@@ -53,9 +53,9 @@ function EditProfilePopup({ isOpen, onUpdateUser, onClose }) {
         className="popup__input-error" 
       ></span>
       <input
-        id="about"
+        id="description"
         className="popup__item"
-        name="about"
+        name="description"
         type="text"
         placeholder="О себе"
         required
@@ -65,7 +65,7 @@ function EditProfilePopup({ isOpen, onUpdateUser, onClose }) {
         onChange={handleChange}
       />
       <span 
-        id="about-input-error" 
+        id="name-input-error" 
         className="popup__input-error"
       ></span>
     </PopupWithForm>
