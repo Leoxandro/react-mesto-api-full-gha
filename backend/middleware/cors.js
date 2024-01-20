@@ -2,6 +2,9 @@ const allowedCors = [
   'http://localhost:3000',
   'api.akarpov.students.nomoredomainsmonster.ru',
   'akarpov.students.nomoredomainsmonster.ru',
+  'https://akarpov.students.nomoredomainsmonster.ru',
+  'http://akarpov.students.nomoredomainsmonster.ru',
+  '*',
 ];
 
 module.exports = (req, res, next) => {
@@ -9,6 +12,7 @@ module.exports = (req, res, next) => {
   const { method } = req;
   const DEFAULT_ALLOWED_METHODS = 'GET,HEAD,PUT,PATCH,POST,DELETE';
   const requestHeaders = req.headers['access-control-request-headers'];
+  res.header('Access-Control-Allow-Credentials', 'true');
 
   if (allowedCors.includes(origin)) {
     res.header('Access-Control-Allow-Origin', origin);
@@ -17,8 +21,7 @@ module.exports = (req, res, next) => {
   if (method === 'OPTIONS') {
     res.header('Access-Control-Allow-Methods', DEFAULT_ALLOWED_METHODS);
     res.header('Access-Control-Allow-Headers', requestHeaders);
-    res.header('Access-Control-Allow-Credentials', 'true');
-    return res.status(200).send();
+    return res.end();
   }
 
   return next();
