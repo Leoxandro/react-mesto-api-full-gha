@@ -1,7 +1,15 @@
-const { NODE_ENV, JWT_SECRET } = process.env;
+const {
+  NODE_ENV = 'dev',
+  JWT_SECRET = 'dev-secret',
+  SALT = 10,
+  PORT = 3001,
+  MONGODB = 'mongodb://127.0.0.1:27017/mestodb',
+} = process.env;
 
-const constants = {
-  JWT_SECRET: NODE_ENV === 'production' ? JWT_SECRET : 'dev_key',
+module.exports = {
+  NODE_ENV,
+  JWT_SECRET,
+  SALT,
+  PORT,
+  MONGODB,
 };
-
-module.exports = constants;

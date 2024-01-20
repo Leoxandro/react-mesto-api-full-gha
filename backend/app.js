@@ -12,9 +12,10 @@ const auth = require('./middleware/auth');
 const { errorHandler } = require('./middleware/error-handler');
 const { requestLogger, errorLogger } = require('./middleware/logger');
 const { NotFoundError } = require('./utils/errors');
+const { PORT, MONGODB } = require('./utils/constants');
 
 mongoose
-  .connect('mongodb://127.0.0.1:27017/mestodb')
+  .connect(MONGODB)
   .then(() => console.log('Connected to MongoDB'))
   .catch((error) => console.log(`Error during MongoDB connection: ${error}`));
 
@@ -46,8 +47,6 @@ app.use('*', (req, res, next) => {
 
 app.use(errors());
 app.use(errorHandler);
-
-const { PORT = 3001 } = process.env;
 
 app.listen(PORT, () => {
   console.log(`Server has been started on port ${PORT}`);

@@ -12,7 +12,7 @@ const {
   HTTP_STATUS_OK,
 } = require('../constants/constants');
 
-const { JWT_SECRET = 'dev_key' } = process.env;
+const { JWT_SECRET, SALT } = require('../utils/constants');
 
 const login = (req, res, next) => {
   const { email, password } = req.body;
@@ -71,7 +71,7 @@ const createUser = (req, res, next) => {
   } = req.body;
 
   return bcrypt
-    .hash(password, 10)
+    .hash(password, SALT)
     .then((hash) => User.create({
       name,
       about,
