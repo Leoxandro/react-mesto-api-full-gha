@@ -2,8 +2,8 @@ const allowedCors = [
   'http://localhost:3000',
   'api.akarpov.students.nomoredomainsmonster.ru',
   'akarpov.students.nomoredomainsmonster.ru',
-  'api.akarpov.students.nomoredomainsmonster.ru/*',
-  'akarpov.students.nomoredomainsmonster.ru/*',
+  'http://akarpov.students.nomoredomainsmonster.ru/',
+  'http://api.akarpov.students.nomoredomainsmonster.ru/',
 ];
 
 module.exports = (req, res, next) => {
