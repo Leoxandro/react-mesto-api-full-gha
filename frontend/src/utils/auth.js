@@ -1,4 +1,4 @@
-export const BASE_URL = 'api.leoxandro.students.nomoredomainsmonster.ru';
+export const BASE_URL = 'leoxandro.students.nomoredomainsmonster.ru';
 
 const handleResponse = (res) =>
   res.ok ? res.json() : Promise.reject(`Ошибка ${res.status}`);
