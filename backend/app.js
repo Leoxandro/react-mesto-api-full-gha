@@ -22,22 +22,10 @@ const app = express();
 
 app.use(express.json());
 
-app.use((req, res, next) => {
-  res.on('finish', () => {
-    console.log('Response headers:', res.getHeaders());
-  });
-  next();
-});
-
 app.use(requestLogger);
 
-const corsOptions = {
-  origin: process.env.CORS_WHITELIST.split(','),
-  optionsSuccessStatus: 200,
-  credentials: true,
-};
-
-app.use(cors(corsOptions));
+app.use(cors());
+app.options('*', cors());
 
 app.get('/crash-test', () => {
   setTimeout(() => {
