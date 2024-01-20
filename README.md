@@ -9,7 +9,7 @@
 
 ## Ссылки на проект
 
-IP-адрес 158.160.118.255
+IP-адрес 51.250.94.13
 
 Frontend https://leoxandro.students.nomoredomainsmonster.ru
 
