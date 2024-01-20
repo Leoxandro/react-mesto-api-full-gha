@@ -7,8 +7,8 @@ const allowedCors = [
   'http://karpov.students.nomoredomainsmonster.ru',
   'http://api.karpov.students.nomoredomainsmonster.ru',
   'https://api.karpov.students.nomoredomainsmonster.ru',
-  'localhost:27017/mestodb',
-  'mongodb://localhost:27017/mestodb',
+  '127.0.0.1:27017/mestodb',
+  'mongodb://127.0.0.1:27017/mestodb',
   '*',
 ];
 
