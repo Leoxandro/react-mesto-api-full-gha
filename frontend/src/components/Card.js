@@ -18,6 +18,8 @@ const Card = ({
   }
 
   function handleLikeClick() {
+    console.log("Likes:", likes);
+    console.log("_id:", _id);
     onCardLike({ likes, _id });
   }
 

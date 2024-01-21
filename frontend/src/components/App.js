@@ -133,11 +133,9 @@ function App() {
   // Like card function
 
   function handleCardLike({ likes, id }) {
-    console.log('Likes:', likes);
-  
+    console.log("Parent Likes:", likes);
+    console.log("Parent _id:", id);
     const isLiked = likes ? likes.some((i) => i._id === currentUser._id) : false;
-  
-    console.log('isLiked:', isLiked);
   
     api.changeLikeCardStatus(id, isLiked ? 'DELETE' : 'PUT')
       .then((newCard) => {
