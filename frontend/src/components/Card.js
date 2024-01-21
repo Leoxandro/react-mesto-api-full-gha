@@ -10,7 +10,7 @@ const Card = ({
   onCardClick, 
   onCardLike, 
   onCardDelete 
-  }) => {
+}) => {
   const currentUser = useContext(CurrentUserContext);
 
   function handleCardClick() {
@@ -18,20 +18,20 @@ const Card = ({
   }
 
   function handleLikeClick() {
-    onCardLike({ likes, id });
+    onCardLike({ id });
   }
 
   function handleCardDelete() {
     onCardDelete({ id });
   }
 
-  const isOwnCard = isOwn._id === currentUser._id;
+  const isOwnCard = isOwn && isOwn._id === currentUser._id;
   const cardDeleteBtnRender = (`${
     isOwnCard ? 'element__delete-btn' : 'element__delete-btn hidden'
   }`);
 
 
-  const isLiked = likes.some((i) => i._id === currentUser._id);
+  const isLiked = likes.some((like) => like._id === currentUser._id);
   const cardLikeButtonClassName = (`${
     isLiked ? 'element__like-btn active' : 'element__like-btn' 
   }`);
