@@ -66,7 +66,7 @@ function App() {
           console.log(`Возникла глобальная ошибка, ${err}`);
         });
       }
-    }, []);
+    }, [isLoggedIn]);
 
   // Open All Popups
 
@@ -218,7 +218,7 @@ function App() {
           console.log('400 — Переданный токен некорректен');
         });
     }
-  }, []);
+  }, [navigate]);
 
   function onLogin({ password, email }) {
     auth
