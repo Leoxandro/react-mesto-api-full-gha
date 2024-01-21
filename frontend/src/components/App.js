@@ -134,21 +134,21 @@ function App() {
 
   function handleCardLike({ likes, id }) {
     console.log('Likes:', likes);
+  
     const isLiked = likes ? likes.some((i) => i._id === currentUser._id) : false;
-    const method = isLiked ? 'DELETE' : 'PUT';
+  
     console.log('isLiked:', isLiked);
-    if (likes) {
-      api
-        .changeLikeCardStatus(id, method)
-        .then((newCard) => {
-          setCards((cards) =>
-            cards.map((c) => (c._id === id ? newCard : c))
-          )
-        })
-        .catch((err) => {
-          console.log(`Ошибка установки/уборки лайка, ${err}`)
+  
+    api.changeLikeCardStatus(id, isLiked ? 'DELETE' : 'PUT')
+      .then((newCard) => {
+        console.log('New Card:', newCard);
+        setCards((cards) =>
+          cards.map((c) => (c._id === id ? newCard : c))
+        );
+      })
+      .catch((err) => {
+        console.log(`Ошибка установки/уборки лайка, ${err}`);
       });
-    }
   }
 
 
