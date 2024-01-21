@@ -18,7 +18,7 @@ const Card = ({
   }
 
   function handleLikeClick() {
-    onCardLike({ id });
+    onCardLike({ likes, id });
   }
 
   function handleCardDelete() {
