@@ -134,8 +134,8 @@ function App() {
   // Like card function
 
   function handleCardLike({ likes, id }) {
-    const isLiked = likes.some((like) => {
-      return like._id === currentUser._id
+    const isLiked = likes.some((i) => {
+      return i._id === currentUser._id
     })
     const method = isLiked ? 'DELETE' : 'PUT'
     api
