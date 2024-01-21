@@ -66,7 +66,7 @@ function App() {
           console.log(`Возникла глобальная ошибка, ${err}`);
         });
       }
-    }, []);
+    }, [isLoggedIn]);
 
   // Open All Popups
 
@@ -218,7 +218,7 @@ function App() {
           console.log('400 — Переданный токен некорректен');
         });
     }
-  }, []);
+  }, [navigate]);
 
   function onLogin({ password, email }) {
     auth
@@ -255,7 +255,6 @@ function App() {
     })
     .catch((err) => {
       setInfoToolTipPopupOpen(true);
-      console.log(err);
       setMessage({
         imgPath: DenyIcon,
         text: "Что-то пошло не так! Попробуйте ещё раз.",
