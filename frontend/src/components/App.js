@@ -178,6 +178,7 @@ function App() {
   function handleUpdateAvatar(e) {
     api.sendAvatarData(e).then((res) => {
       setCurrentUser({
+        ...currentUser,
         avatar: res.avatar
       })
       closeAllPopups()
