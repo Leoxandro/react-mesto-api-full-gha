@@ -40,6 +40,7 @@ class Api {
     return fetch(`${this._link}cards`, {
       headers: this._headers,
     }).then((res) => {
+      console.log('Response from getInitialCards:', res);
       return this._processingServerResponse(res);
     });
   }
