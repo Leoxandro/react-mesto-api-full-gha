@@ -30,7 +30,7 @@ class Api {
 
   _processingServerResponse(res) {
     if (res.ok) {
-      return res.json();
+      return res.json().then((data) => data.data || data);
     } else {
       return Promise.reject(`код ошибки: ${res.status}`);
     }
