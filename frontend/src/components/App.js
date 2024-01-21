@@ -132,18 +132,18 @@ function App() {
 
   // Like card function
 
-  function handleCardLike({ likes, id }) {
+  function handleCardLike({ likes, _id }) {
     console.log('Likes:', likes);
   
     const isLiked = likes ? likes.some((i) => i._id === currentUser._id) : false;
   
     console.log('isLiked:', isLiked);
   
-    api.changeLikeCardStatus(id, isLiked ? 'DELETE' : 'PUT')
+    api.changeLikeCardStatus(_id, isLiked ? 'DELETE' : 'PUT')
       .then((newCard) => {
         console.log('New Card:', newCard);
         setCards((cards) =>
-          cards.map((c) => (c._id === id ? newCard : c))
+          cards.map((c) => (c._id === _id ? newCard : c))
         );
       })
       .catch((err) => {
