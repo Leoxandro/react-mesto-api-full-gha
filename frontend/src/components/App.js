@@ -133,13 +133,12 @@ function App() {
   // Like card function
 
   function handleCardLike({ likes, id }) {
-    console.log("Parent Likes:", likes);
-    console.log("Parent _id:", id);
-    const isLiked = likes ? likes.some((i) => i._id === currentUser._id) : false;
-  
-    api.changeLikeCardStatus(id, isLiked ? 'DELETE' : 'PUT')
+    const isLiked = likes.some((i) => i === currentUser._id);
+    const method = isLiked ? 'DELETE' : 'PUT';
+    console.log(isLiked);
+    api
+      .changeLikeCardStatus(id, method)
       .then((newCard) => {
-        console.log('New Card:', newCard);
         setCards((cards) =>
           cards.map((c) => (c._id === id ? newCard : c))
         );
@@ -148,6 +147,7 @@ function App() {
         console.log(`Ошибка установки/уборки лайка, ${err}`);
       });
   }
+  
 
 
   // Delete card function 

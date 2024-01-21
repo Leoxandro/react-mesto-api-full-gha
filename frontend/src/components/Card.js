@@ -4,7 +4,7 @@ import CurrentUserContext from "../contexts/CurrentUserContext";
 const Card = ({ 
   name,
   img,
-  _id,
+  id,
   isOwn,
   likes, 
   onCardClick, 
@@ -18,25 +18,22 @@ const Card = ({
   }
 
   function handleLikeClick() {
-    console.log("Likes:", likes);
-    console.log("_id:", _id);
-    onCardLike({ likes, _id });
+    onCardLike({ likes: [...likes], id });
   }
 
   function handleCardDelete() {
-    onCardDelete({ _id });
+    onCardDelete({ id });
   }
 
-  const isOwnCard = isOwn && isOwn._id === currentUser._id;
-  const cardDeleteBtnRender = (`${
-    isOwnCard ? 'element__delete-btn' : 'element__delete-btn hidden'
-  }`);
+  const isOwnCard = isOwn === currentUser._id || isOwn._id === currentUser._id;
+  const cardDeleteBtnRender = isOwnCard
+    ? "element__delete-btn"
+    : "element__delete-btn hidden";
 
-
-  const isLiked = likes.some((i) => i._id === currentUser._id);
-  const cardLikeButtonClassName = (`${
-    isLiked ? 'element__like-btn active' : 'element__like-btn' 
-  }`);
+  const isLiked = likes.some((i) => i === currentUser._id);
+  const cardLikeButtonClassName = isLiked
+    ? "element__like-btn active"
+    : "element__like-btn";
 
   return (
     <div className="element">
