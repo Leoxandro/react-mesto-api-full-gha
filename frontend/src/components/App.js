@@ -67,7 +67,7 @@ function App() {
           console.log(`Возникла глобальная ошибка, ${err}`);
         });
       }
-    }, [isLoggedIn]);
+    }, []);
 
   // Open All Popups
 
@@ -134,9 +134,7 @@ function App() {
   // Like card function
 
   function handleCardLike({ likes, id }) {
-    const isLiked = likes.some((i) => {
-      return i._id === currentUser._id
-    })
+    const isLiked = likes ? likes.some((i) => i._id === currentUser._id) : false;
     const method = isLiked ? 'DELETE' : 'PUT'
     api
       .changeLikeCardStatus(id, method)

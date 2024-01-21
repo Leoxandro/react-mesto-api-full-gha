@@ -27,13 +27,13 @@ const Card = ({
 
   const isOwnCard = isOwn && isOwn._id === currentUser._id;
   const cardDeleteBtnRender = (`${
-    isOwnCard ? 'element__delete-btn hidden' : 'element__delete-btn'
+    isOwnCard ? 'element__delete-btn' : 'element__delete-btn hidden'
   }`);
 
 
   const isLiked = likes.some((i) => i._id === currentUser._id);
   const cardLikeButtonClassName = (`${
-    isLiked ? 'element__like-btn' : 'element__like-btn active' 
+    isLiked ? 'element__like-btn active' : 'element__like-btn' 
   }`);
 
   return (
